@@ -4,11 +4,11 @@
   "description": "",
   "main": "./index.js",
   "scripts": {
-    "build": "node index.js"
+    "start": "node index.js",
+    "build": "ng build"
   },
-  "heroku-run-build-script": true,
   "keywords": [],
-  "author": "",
+  "author": "Filipe Melo da Silva",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.1",
