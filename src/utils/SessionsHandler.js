@@ -28,6 +28,18 @@ function getHeadersToReturnJSession(loginSubscription){
     return headers['set-cookie']
 }
 module.exports = {
+
+    async handleLogin(login, senha){
+        const formBody = {
+            login,
+            senha
+        }
+        const response = await api.post(
+            '/GerenciadorAcessoWeb/segurancaAction.do?actionType=ajaxLogin&dummy=',
+            qs.stringify(formBody))
+    
+        return response
+    },
     async userTokenHandler(userToken){
 
         const userAuthorized = await getUserCredentials(userToken)
