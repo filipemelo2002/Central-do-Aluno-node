@@ -69,6 +69,6 @@ module.exports = {
 
         //const horarioHtmlTable = await getHorariosTable(session)
 
-        return response.status(500).send({message:"Serviço indisponível no momento"})
+        return response.send({message:"Serviço indisponível no momento"})
     }
 }
