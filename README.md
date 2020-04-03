@@ -10,7 +10,7 @@ Esta API Restful tem o intuito de prover os dados para serem consumidos pela Apl
 * Faça download do repositório em sua máquina
 * Faça a instalação de todas as dependências que podem ser acessadas no arquivo [package.json](https://github.com/filipemelo2002/Central-do-Aluno-node/blob/master/package.json) _(recomendamos utilizar o Yarn por ser mais rápido)_
 * `npm start` ou `yarn start`
-## Principais rotas
+## Endpoints
 Todas as Rotas podem ser vistas no arquivo [routes.js](https://github.com/filipemelo2002/Central-do-Aluno-node/blob/master/src/routes.js).
   * `/sessions` rota que serve para autenticar o usuário, salvando-o no banco de dados Mongo, e retornando seu `userToken`
     * exemplo: 
