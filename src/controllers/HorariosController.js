@@ -8,14 +8,14 @@ function getStringBetween (str, prefix, suffix) {
   if (i >= 0) {
     s = s.substring(i + prefix.length)
   } else {
-    return ''
+    return
   }
   if (suffix) {
     i = s.indexOf(suffix)
     if (i >= 0) {
       s = s.substring(0, i)
     } else {
-      return ''
+      return
     }
   }
   return s
@@ -108,21 +108,9 @@ function getHorarioAsJson (htmlTable) {
 }
 module.exports = {
   async index (request, response) {
-    const { usertoken } = request.headers
+    const { cookies } = request
 
-    if (!usertoken) {
-      return response.status(400).json({
-        message: 'Usuário não autenticado'
-      })
-    }
-    const session = await userTokenHandler(usertoken)
-    if (!session) {
-      return response.status(400).json({
-        message: 'Usuário não autenticado'
-      })
-    }
-
-    const horarioHtmlTable = await getHorariosTable(session)
+    const horarioHtmlTable = await getHorariosTable(cookies)
     const horario = getHorarioAsJson(horarioHtmlTable)
     return response.json(horario)
   }
